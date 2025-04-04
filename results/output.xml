@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.2.2 (Python 3.13.0 on win32)" generated="2025-04-04T17:11:48.546840" rpa="false" schemaversion="5">
+<suite id="s1" name="Add To Cart Tests" source="C:\Users\Elgue\Documents\miniprojetRBFW\tests\add_to_cart_tests.robot">
+<kw name="Open AOS Website" owner="common" type="SETUP">
+<kw name="Create Directory" owner="OperatingSystem">
+<msg time="2025-04-04T17:11:48.832554" level="INFO" html="true">Directory '&lt;a href="file://C:\Users\Elgue\Documents\miniprojetRBFW\screenshots"&gt;C:\Users\Elgue\Documents\miniprojetRBFW\screenshots&lt;/a&gt;' already exists.</msg>
+<arg>${SCREENSHOTS_DIR}</arg>
+<doc>Creates the specified directory.</doc>
+<status status="PASS" start="2025-04-04T17:11:48.832313" elapsed="0.000308"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2025-04-04T17:11:48.832990" level="INFO">${options} = &lt;selenium.webdriver.chrome.options.Options object at 0x00000238B0427770&gt;</msg>
+<var>${options}</var>
+<arg>sys.modules['selenium.webdriver'].ChromeOptions()</arg>
+<arg>sys</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-04-04T17:11:48.832743" elapsed="0.000275"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<arg>${HEADLESS} == ${TRUE}</arg>
+<arg>Evaluate</arg>
+<arg>$options.add_argument('--headless')</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2025-04-04T17:11:48.833129" elapsed="0.000146"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<arg>$options.add_argument('--disable-gpu')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-04-04T17:11:48.833362" elapsed="0.000191"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<arg>$options.add_argument('--no-sandbox')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-04-04T17:11:48.833641" elapsed="0.000201"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<arg>$options.add_argument('--disable-dev-shm-usage')</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2025-04-04T17:11:48.833927" elapsed="0.000127"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-04-04T17:11:48.834376" level="INFO">Opening browser 'chrome' to base url 'https://advantageonlineshopping.com/#/'.</msg>
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<arg>options=${options}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-04-04T17:11:48.834157" elapsed="4.462363"/>
+</kw>
+<kw name="Set Window Size" owner="SeleniumLibrary">
+<arg>1920</arg>
+<arg>1080</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" start="2025-04-04T17:11:53.296731" elapsed="0.366754"/>
+</kw>
+<kw name="Set Selenium Timeout" owner="SeleniumLibrary">
+<arg>${TIMEOUT}</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" start="2025-04-04T17:11:53.663690" elapsed="0.000964"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>xpath=//*[@id="laptopsImg"]</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-04-04T17:11:53.664809" elapsed="3.721030"/>
+</kw>
+<kw name="Wait For Condition" owner="SeleniumLibrary">
+<arg>return document.readyState == "complete"</arg>
+<arg>timeout=30s</arg>
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<status status="PASS" start="2025-04-04T17:11:57.386041" elapsed="0.003749"/>
+</kw>
+<kw name="Take Screenshot With Label" owner="common">
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2025-04-04T17:11:57.390610" level="INFO">${timestamp} = 20250404-171157</msg>
+<var>${timestamp}</var>
+<arg>result_format=%Y%m%d-%H%M%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2025-04-04T17:11:57.390307" elapsed="0.000349"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-04-04T17:11:57.391000" level="INFO">${filename} = C:\Users\Elgue\Documents\miniprojetRBFW\resources/../screenshots/20250404-171157_homepage_loaded.png</msg>
+<var>${filename}</var>
+<arg>${SCREENSHOTS_DIR}/${timestamp}_${label}.png</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-04-04T17:11:57.390819" elapsed="0.000204"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-04-04T17:11:57.517269" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../screenshots/20250404-171157_homepage_loaded.png"&gt;&lt;img src="../screenshots/20250404-171157_homepage_loaded.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${filename}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-04-04T17:11:57.391139" elapsed="0.126304"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-04T17:11:57.517927" level="INFO">Screenshot saved to C:\Users\Elgue\Documents\miniprojetRBFW\resources/../screenshots/20250404-171157_homepage_loaded.png</msg>
+<arg>Screenshot saved to ${filename}</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-04T17:11:57.517703" elapsed="0.000415"/>
+</kw>
+<arg>homepage_loaded</arg>
+<status status="PASS" start="2025-04-04T17:11:57.390014" elapsed="0.128219"/>
+</kw>
+<status status="PASS" start="2025-04-04T17:11:48.831622" elapsed="8.686684"/>
+</kw>
+<test id="s1-t1" name="Add Single Product To Cart" line="25">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-04-04T17:11:57.519181" level="INFO">${product} = {'category': 'LAPTOPS', 'name': 'HP Chromebook 14 G1(ENERGY STAR)', 'color': 'BLACK', 'quantity': '1'}</msg>
+<var>${product}</var>
+<arg>category=${PRODUCT1_CATEGORY}</arg>
+<arg>name=${PRODUCT1_NAME}</arg>
+<arg>color=${PRODUCT1_COLOR}</arg>
+<arg>quantity=${PRODUCT1_QUANTITY}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-04-04T17:11:57.518831" elapsed="0.000376"/>
+</kw>
+<kw name="Add Product To Cart From Data" owner="add_to_cart_keywords">
+<kw name="Navigate To Category" owner="home_page">
+<kw name="Click Element When Ready" owner="base_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-04-04T17:11:57.520109" elapsed="0.014213"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-04-04T17:11:57.534540" elapsed="0.018670"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-04T17:11:57.553619" level="INFO">Clicking element 'xpath=//*[@id="laptopsImg"]'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-04T17:11:57.553407" elapsed="0.052010"/>
+</kw>
+<arg>xpath=${CategoryXpath}</arg>
+<status status="PASS" start="2025-04-04T17:11:57.519915" elapsed="0.085652"/>
+</kw>
+<kw name="Wait Until Page Is Loaded" owner="base_page">
+<kw name="Wait For Condition" owner="SeleniumLibrary">
+<arg>return document.readyState == "complete"</arg>
+<doc>Waits until ``condition`` is true or ``timeout`` expires.</doc>
+<status status="PASS" start="2025-04-04T17:11:57.606134" elapsed="0.003678"/>
+</kw>
+<status status="PASS" start="2025-04-04T17:11:57.605810" elapsed="0.004104"/>
+</kw>
+<arg>${product_data}[category]</arg>
+<status status="PASS" start="2025-04-04T17:11:57.519703" elapsed="0.090258"/>
+</kw>
+<kw name="Take Screenshot With Label" owner="common">
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2025-04-04T17:11:57.610735" level="INFO">${timestamp} = 20250404-171157</msg>
+<var>${timestamp}</var>
+<arg>result_format=%Y%m%d-%H%M%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2025-04-04T17:11:57.610403" elapsed="0.000358"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-04-04T17:11:57.611017" level="INFO">${filename} = C:\Users\Elgue\Documents\miniprojetRBFW\resources/../screenshots/20250404-171157_category_LAPTOPS.png</msg>
+<var>${filename}</var>
+<arg>${SCREENSHOTS_DIR}/${timestamp}_${label}.png</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-04-04T17:11:57.610852" elapsed="0.000188"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-04-04T17:11:57.701947" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../screenshots/20250404-171157_category_LAPTOPS.png"&gt;&lt;img src="../screenshots/20250404-171157_category_LAPTOPS.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${filename}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-04-04T17:11:57.611144" elapsed="0.090895"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-04T17:11:57.702350" level="INFO">Screenshot saved to C:\Users\Elgue\Documents\miniprojetRBFW\resources/../screenshots/20250404-171157_category_LAPTOPS.png</msg>
+<arg>Screenshot saved to ${filename}</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-04T17:11:57.702189" elapsed="0.000359"/>
+</kw>
+<arg>category_${product_data}[category]</arg>
+<status status="PASS" start="2025-04-04T17:11:57.610132" elapsed="0.092591"/>
+</kw>
+<kw name="Select First Product" owner="product_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${PRODUCT_LIST_ITEM}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-04-04T17:11:57.703161" elapsed="2.897598"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-04T17:12:00.601331" level="INFO">Clicking element 'xpath=/html/body/div[3]/section/article/div[3]/div/div/div[2]/ul/li[1]'.</msg>
+<arg>${PRODUCT_LIST_ITEM}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-04T17:12:00.600951" elapsed="0.184018"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>${ADD_TO_CART_BUTTON}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2025-04-04T17:12:00.785173" elapsed="3.915006"/>
+</kw>
+<status status="PASS" start="2025-04-04T17:11:57.702906" elapsed="6.997385"/>
+</kw>
+<kw name="Take Screenshot With Label" owner="common">
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2025-04-04T17:12:04.700938" level="INFO">${timestamp} = 20250404-171204</msg>
+<var>${timestamp}</var>
+<arg>result_format=%Y%m%d-%H%M%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2025-04-04T17:12:04.700759" elapsed="0.000207"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-04-04T17:12:04.701212" level="INFO">${filename} = C:\Users\Elgue\Documents\miniprojetRBFW\resources/../screenshots/20250404-171204_product_HP Chromebook 14 G1(ENERGY STAR).png</msg>
+<var>${filename}</var>
+<arg>${SCREENSHOTS_DIR}/${timestamp}_${label}.png</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-04-04T17:12:04.701060" elapsed="0.000182"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-04-04T17:12:04.812170" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../screenshots/20250404-171204_product_HP%20Chromebook%2014%20G1%28ENERGY%20STAR%29.png"&gt;&lt;img src="../screenshots/20250404-171204_product_HP%20Chromebook%2014%20G1%28ENERGY%20STAR%29.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${filename}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-04-04T17:12:04.701373" elapsed="0.110909"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-04T17:12:04.812623" level="INFO">Screenshot saved to C:\Users\Elgue\Documents\miniprojetRBFW\resources/../screenshots/20250404-171204_product_HP Chromebook 14 G1(ENERGY STAR).png</msg>
+<arg>Screenshot saved to ${filename}</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-04T17:12:04.812446" elapsed="0.000354"/>
+</kw>
+<arg>product_${product_data}[name]</arg>
+<status status="PASS" start="2025-04-04T17:12:04.700476" elapsed="0.112431"/>
+</kw>
+<kw name="Select Product Color" owner="product_page">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-04-04T17:12:04.813578" level="INFO">${color_locator} = css=span[title='BLACK']</msg>
+<var>${color_locator}</var>
+<arg>${COLOR_OPTION_PREFIX}${color}${COLOR_OPTION_SUFFIX}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-04-04T17:12:04.813394" elapsed="0.000211"/>
+</kw>
+<kw name="Click Element When Ready" owner="base_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-04-04T17:12:04.813974" elapsed="0.013786"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-04-04T17:12:04.827964" elapsed="0.017529"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-04T17:12:04.846047" level="INFO">Clicking element 'css=span[title='BLACK']'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-04T17:12:04.845756" elapsed="0.048050"/>
+</kw>
+<arg>${color_locator}</arg>
+<status status="PASS" start="2025-04-04T17:12:04.813741" elapsed="0.080176"/>
+</kw>
+<arg>${product_data}[color]</arg>
+<status status="PASS" start="2025-04-04T17:12:04.813088" elapsed="0.080884"/>
+</kw>
+<kw name="Take Screenshot With Label" owner="common">
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2025-04-04T17:12:04.894623" level="INFO">${timestamp} = 20250404-171204</msg>
+<var>${timestamp}</var>
+<arg>result_format=%Y%m%d-%H%M%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2025-04-04T17:12:04.894437" elapsed="0.000219"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-04-04T17:12:04.894913" level="INFO">${filename} = C:\Users\Elgue\Documents\miniprojetRBFW\resources/../screenshots/20250404-171204_color_selected_BLACK.png</msg>
+<var>${filename}</var>
+<arg>${SCREENSHOTS_DIR}/${timestamp}_${label}.png</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-04-04T17:12:04.894752" elapsed="0.000184"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-04-04T17:12:04.984546" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../screenshots/20250404-171204_color_selected_BLACK.png"&gt;&lt;img src="../screenshots/20250404-171204_color_selected_BLACK.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${filename}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-04-04T17:12:04.895033" elapsed="0.089648"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-04T17:12:04.985048" level="INFO">Screenshot saved to C:\Users\Elgue\Documents\miniprojetRBFW\resources/../screenshots/20250404-171204_color_selected_BLACK.png</msg>
+<arg>Screenshot saved to ${filename}</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-04T17:12:04.984851" elapsed="0.000470"/>
+</kw>
+<arg>color_selected_${product_data}[color]</arg>
+<status status="PASS" start="2025-04-04T17:12:04.894142" elapsed="0.091280"/>
+</kw>
+<kw name="Set Product Quantity" owner="product_page">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-04-04T17:12:04.986098" level="INFO">Typing text '1' into text field 'name=quantity'.</msg>
+<arg>${QUANTITY_INPUT}</arg>
+<arg>${quantity}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-04T17:12:04.985902" elapsed="0.068018"/>
+</kw>
+<arg>${product_data}[quantity]</arg>
+<status status="PASS" start="2025-04-04T17:12:04.985601" elapsed="0.068426"/>
+</kw>
+<kw name="Take Screenshot With Label" owner="common">
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2025-04-04T17:12:05.054632" level="INFO">${timestamp} = 20250404-171205</msg>
+<var>${timestamp}</var>
+<arg>result_format=%Y%m%d-%H%M%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2025-04-04T17:12:05.054465" elapsed="0.000194"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-04-04T17:12:05.054878" level="INFO">${filename} = C:\Users\Elgue\Documents\miniprojetRBFW\resources/../screenshots/20250404-171205_quantity_set_1.png</msg>
+<var>${filename}</var>
+<arg>${SCREENSHOTS_DIR}/${timestamp}_${label}.png</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-04-04T17:12:05.054744" elapsed="0.000155"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-04-04T17:12:05.140568" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../screenshots/20250404-171205_quantity_set_1.png"&gt;&lt;img src="../screenshots/20250404-171205_quantity_set_1.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${filename}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-04-04T17:12:05.054986" elapsed="0.085697"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-04T17:12:05.141027" level="INFO">Screenshot saved to C:\Users\Elgue\Documents\miniprojetRBFW\resources/../screenshots/20250404-171205_quantity_set_1.png</msg>
+<arg>Screenshot saved to ${filename}</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-04T17:12:05.140861" elapsed="0.000344"/>
+</kw>
+<arg>quantity_set_${product_data}[quantity]</arg>
+<status status="PASS" start="2025-04-04T17:12:05.054189" elapsed="0.087125"/>
+</kw>
+<kw name="Add Product To Cart" owner="product_page">
+<kw name="Click Element When Ready" owner="base_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-04-04T17:12:05.141987" elapsed="0.008837"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-04-04T17:12:05.150989" elapsed="0.012497"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-04T17:12:05.163854" level="INFO">Clicking element 'name=save_to_cart'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-04T17:12:05.163664" elapsed="0.046622"/>
+</kw>
+<arg>${ADD_TO_CART_BUTTON}</arg>
+<status status="PASS" start="2025-04-04T17:12:05.141748" elapsed="0.068649"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2025-04-04T17:12:06.210848" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2025-04-04T17:12:05.210525" elapsed="1.000434"/>
+</kw>
+<status status="PASS" start="2025-04-04T17:12:05.141504" elapsed="1.069564"/>
+</kw>
+<kw name="Take Screenshot With Label" owner="common">
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2025-04-04T17:12:06.211661" level="INFO">${timestamp} = 20250404-171206</msg>
+<var>${timestamp}</var>
+<arg>result_format=%Y%m%d-%H%M%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2025-04-04T17:12:06.211497" elapsed="0.000188"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-04-04T17:12:06.211910" level="INFO">${filename} = C:\Users\Elgue\Documents\miniprojetRBFW\resources/../screenshots/20250404-171206_product_added_to_cart.png</msg>
+<var>${filename}</var>
+<arg>${SCREENSHOTS_DIR}/${timestamp}_${label}.png</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-04-04T17:12:06.211771" elapsed="0.000159"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-04-04T17:12:06.302831" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../screenshots/20250404-171206_product_added_to_cart.png"&gt;&lt;img src="../screenshots/20250404-171206_product_added_to_cart.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${filename}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-04-04T17:12:06.212033" elapsed="0.090920"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-04T17:12:06.303305" level="INFO">Screenshot saved to C:\Users\Elgue\Documents\miniprojetRBFW\resources/../screenshots/20250404-171206_product_added_to_cart.png</msg>
+<arg>Screenshot saved to ${filename}</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-04T17:12:06.303132" elapsed="0.000345"/>
+</kw>
+<arg>product_added_to_cart</arg>
+<status status="PASS" start="2025-04-04T17:12:06.211234" elapsed="0.092332"/>
+</kw>
+<arg>${product}</arg>
+<status status="PASS" start="2025-04-04T17:11:57.519470" elapsed="8.784176"/>
+</kw>
+<kw name="Verify Product Was Added To Cart" owner="add_to_cart_keywords">
+<kw name="Open Cart" owner="base_page">
+<kw name="Click Element When Ready" owner="base_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-04-04T17:12:06.304597" elapsed="0.012008"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2025-04-04T17:12:06.316784" elapsed="0.013305"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2025-04-04T17:12:06.330483" level="INFO">Clicking element 'id=shoppingCartLink'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2025-04-04T17:12:06.330273" elapsed="0.050615"/>
+</kw>
+<arg>${CART_ICON}</arg>
+<status status="PASS" start="2025-04-04T17:12:06.304404" elapsed="0.076596"/>
+</kw>
+<status status="PASS" start="2025-04-04T17:12:06.304183" elapsed="0.076865"/>
+</kw>
+<kw name="Verify Product In Cart" owner="cart_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${CHECKOUT_BUTTON_TEXT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-04-04T17:12:06.381494" elapsed="0.422809"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-04-04T17:12:06.813858" level="INFO">Element 'xpath=//*[@id="checkOutButton"]' is displayed.</msg>
+<arg>${CHECKOUT_BUTTON_TEXT}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-04-04T17:12:06.804525" elapsed="0.009422"/>
+</kw>
+<status status="PASS" start="2025-04-04T17:12:06.381200" elapsed="0.432873"/>
+</kw>
+<kw name="Take Screenshot With Label" owner="common">
+<kw name="Get Current Date" owner="DateTime">
+<msg time="2025-04-04T17:12:06.814669" level="INFO">${timestamp} = 20250404-171206</msg>
+<var>${timestamp}</var>
+<arg>result_format=%Y%m%d-%H%M%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<status status="PASS" start="2025-04-04T17:12:06.814507" elapsed="0.000185"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2025-04-04T17:12:06.814916" level="INFO">${filename} = C:\Users\Elgue\Documents\miniprojetRBFW\resources/../screenshots/20250404-171206_product_verified_in_cart_HP Chromebook 14 G1(ENERGY STAR).png</msg>
+<var>${filename}</var>
+<arg>${SCREENSHOTS_DIR}/${timestamp}_${label}.png</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2025-04-04T17:12:06.814776" elapsed="0.000163"/>
+</kw>
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2025-04-04T17:12:06.891021" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="../screenshots/20250404-171206_product_verified_in_cart_HP%20Chromebook%2014%20G1%28ENERGY%20STAR%29.png"&gt;&lt;img src="../screenshots/20250404-171206_product_verified_in_cart_HP%20Chromebook%2014%20G1%28ENERGY%20STAR%29.png" width="800px"&gt;&lt;/a&gt;</msg>
+<arg>${filename}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2025-04-04T17:12:06.815025" elapsed="0.076116"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2025-04-04T17:12:06.891609" level="INFO">Screenshot saved to C:\Users\Elgue\Documents\miniprojetRBFW\resources/../screenshots/20250404-171206_product_verified_in_cart_HP Chromebook 14 G1(ENERGY STAR).png</msg>
+<arg>Screenshot saved to ${filename}</arg>
+<arg>console=True</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2025-04-04T17:12:06.891363" elapsed="0.000433"/>
+</kw>
+<arg>product_verified_in_cart_${product_data}[name]</arg>
+<status status="PASS" start="2025-04-04T17:12:06.814243" elapsed="0.077641"/>
+</kw>
+<arg>${product}</arg>
+<status status="PASS" start="2025-04-04T17:12:06.303888" elapsed="0.588077"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary" type="TEARDOWN">
+<msg time="2025-04-04T17:12:06.892444" level="INFO">Opening url 'https://advantageonlineshopping.com/#/'</msg>
+<arg>${BASE_URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2025-04-04T17:12:06.892269" elapsed="0.031558"/>
+</kw>
+<doc>Test adding a single product to cart</doc>
+<status status="PASS" start="2025-04-04T17:11:57.518398" elapsed="9.405632"/>
+</test>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-04-04T17:12:06.924961" elapsed="2.151014"/>
+</kw>
+<doc>Tests for adding products to cart on Advantage Online Shopping</doc>
+<status status="PASS" start="2025-04-04T17:11:48.547959" elapsed="20.528146"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Add To Cart Tests" id="s1" pass="1" fail="0" skip="0">Add To Cart Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

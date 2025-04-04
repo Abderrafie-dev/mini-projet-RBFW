@@ -1,0 +1,10 @@
+products:
+  - category: LAPTOPS
+    name: HP Chromebook 14 G1(ENERGY STAR)
+    color: BLACK
+    quantity: 1
+  
+  - category: SPEAKERS
+    name: Bose Soundlink Wireless Speaker
+    color: WHITE
+    quantity: 2
